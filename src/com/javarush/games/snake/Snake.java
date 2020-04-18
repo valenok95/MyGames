@@ -38,22 +38,14 @@ public class Snake {
     public void setDirection(Direction direction) {
         switch (this.direction) {
             case RIGHT:
-                if ((snakeParts.get(0).y == snakeParts.get(1).y) && direction == Direction.LEFT) {
-                    return;
-                }
-                break;
             case LEFT:
-                if ((snakeParts.get(0).y == snakeParts.get(1).y) && direction == Direction.RIGHT) {
+                if (snakeParts.get(0).y == snakeParts.get(1).y && ((direction == Direction.LEFT) || (direction == Direction.RIGHT))) {
                     return;
                 }
                 break;
             case DOWN:
-                if ((snakeParts.get(0).x == snakeParts.get(1).x) && direction == Direction.UP) {
-                    return;
-                }
-                break;
             case UP:
-                if ((snakeParts.get(0).x == snakeParts.get(1).x) && direction == Direction.DOWN) {
+                if (snakeParts.get(0).x == snakeParts.get(1).x && ((direction == Direction.UP) || (direction == Direction.DOWN))) {
                     return;
                 }
                 break;
